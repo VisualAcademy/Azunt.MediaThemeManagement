@@ -15,6 +15,8 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents()
     .AddAuthenticationStateSerialization();
 
+builder.Services.AddControllers();
+
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
@@ -38,6 +40,10 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
+
+// 테마 관리: 기본 CRUD 교과서 코드
+builder.Services.AddDependencyInjectionContainerForMediaThemeApp(builder.Configuration.GetConnectionString("DefaultConnection"));
+builder.Services.AddTransient<MediaThemeAppDbContextFactory>();
 
 var app = builder.Build();
 
@@ -68,9 +74,9 @@ app.MapRazorComponents<App>()
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
 
+app.MapControllers();
 
-// MediaThemes 테이블 직접 초기화 (마스터 DB 대상)
-MediaThemesTableBuilder.Run(app.Services, forMaster: true);
-
+//// MediaThemes 테이블 직접 초기화 (마스터 DB 대상)
+//MediaThemesTableBuilder.Run(app.Services, forMaster: true);
 
 app.Run();

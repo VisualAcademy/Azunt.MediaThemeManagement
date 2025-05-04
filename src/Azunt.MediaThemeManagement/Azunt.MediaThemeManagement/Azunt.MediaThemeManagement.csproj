@@ -27,21 +27,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Azunt" Version="1.0.4" />
+        <PackageReference Include="Azunt" Version="1.0.5" />
         <PackageReference Include="Dapper" Version="2.1.66" />
         <PackageReference Include="Dul" Version="1.3.4" />
         <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
         <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.4" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="02_Contracts\" />
-      <Folder Include="03_Repositories\AdoNet\" />
-      <Folder Include="03_Repositories\Dapper\" />
-      <Folder Include="03_Repositories\EfCore\" />
-      <Folder Include="04_Extensions\" />
     </ItemGroup>
 
 </Project>

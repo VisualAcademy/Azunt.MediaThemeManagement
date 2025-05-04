@@ -1,0 +1,58 @@
+﻿@namespace Azunt.Web.Components.Pages.MediaThemes.Controls
+@using Azunt.MediaThemeManagement
+@inject IMediaThemeRepository MediaThemeRepository
+
+<div>
+    <!-- 드롭다운 리스트 -->
+    <select class="form-control mb-2" @onchange="OnSelectChanged">
+        <option value="">-- Select a Asset Location --</option>
+        @foreach (var mediatheme in MediaThemeList)
+        {
+            <option value="@mediatheme" selected="@(mediatheme == SelectedMediaTheme)">
+                @mediatheme
+            </option>
+        }
+    </select>
+
+    <!-- 직접 입력용 텍스트박스: 필요없으면 제거 -->
+    <!-- 텍스트박스 입력 시에도 SelectedMediaThemeChanged 호출 -->
+    <input class="form-control" type="text" placeholder="Or type a new mediatheme..."
+           @bind="SelectedMediaTheme"
+           @oninput="OnInputChanged" />
+</div>
+
+@code {
+    [Parameter]
+    public string SelectedMediaTheme { get; set; } = "";
+
+    [Parameter]
+    public EventCallback<string> SelectedMediaThemeChanged { get; set; }
+
+    private List<string> MediaThemeList { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var mediathemes = await MediaThemeRepository.GetAllAsync();
+        MediaThemeList = mediathemes
+            .Select(d => d.Name ?? "")
+            .Where(n => !string.IsNullOrWhiteSpace(n))
+            .Distinct()
+            .ToList();
+    }
+
+    private async Task OnSelectChanged(ChangeEventArgs e)
+    {
+        var selected = e.Value?.ToString();
+        if (!string.IsNullOrWhiteSpace(selected))
+        {
+            SelectedMediaTheme = selected;
+            await SelectedMediaThemeChanged.InvokeAsync(SelectedMediaTheme);
+        }
+    }
+
+    private async Task OnInputChanged(ChangeEventArgs e)
+    {
+        SelectedMediaTheme = e.Value?.ToString() ?? "";
+        await SelectedMediaThemeChanged.InvokeAsync(SelectedMediaTheme);
+    }
+}
