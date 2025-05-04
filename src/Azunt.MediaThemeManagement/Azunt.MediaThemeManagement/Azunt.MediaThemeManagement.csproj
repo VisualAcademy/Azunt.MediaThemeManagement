@@ -36,4 +36,12 @@
         <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="01_Models\" />
+      <Folder Include="02_Contracts\" />
+      <Folder Include="03_Repositories\AdoNet\" />
+      <Folder Include="03_Repositories\Dapper\" />
+      <Folder Include="03_Repositories\EfCore\" />
+    </ItemGroup>
+
 </Project>
