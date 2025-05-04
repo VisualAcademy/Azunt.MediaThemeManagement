@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azunt.MediaThemeManagement"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Azunt.SqlServer", "Azunt.SqlServer\Azunt.SqlServer.sqlproj", "{AC28016E-BEFD-4BFE-A958-1D176A852D40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azunt.Web", "Azunt.Web\Azunt.Web\Azunt.Web.csproj", "{6F2F0E37-BCCF-404E-98C2-6EBE8E108287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azunt.Web.Client", "Azunt.Web\Azunt.Web.Client\Azunt.Web.Client.csproj", "{83E0731E-FE62-41BD-A50F-237AB69FEAFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{AC28016E-BEFD-4BFE-A958-1D176A852D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC28016E-BEFD-4BFE-A958-1D176A852D40}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC28016E-BEFD-4BFE-A958-1D176A852D40}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6F2F0E37-BCCF-404E-98C2-6EBE8E108287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2F0E37-BCCF-404E-98C2-6EBE8E108287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2F0E37-BCCF-404E-98C2-6EBE8E108287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2F0E37-BCCF-404E-98C2-6EBE8E108287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E0731E-FE62-41BD-A50F-237AB69FEAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E0731E-FE62-41BD-A50F-237AB69FEAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E0731E-FE62-41BD-A50F-237AB69FEAFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E0731E-FE62-41BD-A50F-237AB69FEAFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

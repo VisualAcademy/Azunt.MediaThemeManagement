@@ -42,6 +42,7 @@
       <Folder Include="03_Repositories\AdoNet\" />
       <Folder Include="03_Repositories\Dapper\" />
       <Folder Include="03_Repositories\EfCore\" />
+      <Folder Include="04_Extensions\" />
     </ItemGroup>
 
 </Project>
