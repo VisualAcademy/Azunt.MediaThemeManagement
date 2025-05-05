@@ -72,7 +72,7 @@
 
                                     @if (!SimpleMode)
                                     {
-                                        <td class="text-center text-nowrap small">@Dul.DateTimeUtility.ShowTimeOrDate(m.Created)</td>
+                                        <td class="text-center text-nowrap small">@Dul.DateTimeUtility.ShowTimeOrDate(m.Created.UtcDateTime.AddMinutes(-timeZoneOffsetMinutes))</td>
                                         <td class="text-center">
                                             <input type="checkbox" checked="@(m.Active ?? false)" disabled />
                                         </td>

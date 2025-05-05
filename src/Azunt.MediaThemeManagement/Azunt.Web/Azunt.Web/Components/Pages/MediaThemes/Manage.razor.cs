@@ -16,6 +16,7 @@ namespace Azunt.Web.Pages.MediaThemes;
 public partial class Manage : ComponentBase
 {
     public bool SimpleMode { get; set; } = false;
+    private int timeZoneOffsetMinutes;
 
     #region Parameters
     [Parameter] public int ParentId { get; set; } = 0;
@@ -53,6 +54,15 @@ public partial class Manage : ComponentBase
     #endregion
 
     #region Lifecycle
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            timeZoneOffsetMinutes = await JSRuntimeInjector.InvokeAsync<int>("getLocalTimeZoneOffset");
+            StateHasChanged(); // UI에 반영되도록
+        }
+    }
+
     protected override async Task OnInitializedAsync()
     {
         if (string.IsNullOrEmpty(UserId) || string.IsNullOrEmpty(UserName))
