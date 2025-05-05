@@ -58,7 +58,7 @@ public partial class Manage : ComponentBase
     {
         if (firstRender)
         {
-            timeZoneOffsetMinutes = await JSRuntimeInjector.InvokeAsync<int>("getLocalTimeZoneOffset");
+            timeZoneOffsetMinutes = await JSRuntimeInjector.InvokeAsync<int>("Azunt.TimeZone.getLocalOffsetMinutes");
             StateHasChanged(); // UI에 반영되도록
         }
     }
