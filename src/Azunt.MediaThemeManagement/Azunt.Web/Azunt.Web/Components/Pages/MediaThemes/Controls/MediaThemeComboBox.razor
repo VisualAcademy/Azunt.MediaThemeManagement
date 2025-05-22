@@ -2,10 +2,10 @@
 @using Azunt.MediaThemeManagement
 @inject IMediaThemeRepository MediaThemeRepository
 
-<div>
+<div class="d-flex align-items-center">
     <!-- 드롭다운 리스트 -->
-    <select class="form-control mb-2" @onchange="OnSelectChanged">
-        <option value="">-- Select a Asset Location --</option>
+    <select class="form-control" style="width: 250px;" @onchange="OnSelectChanged">
+        <option value="">-- Select a Media Theme --</option>
         @foreach (var mediatheme in MediaThemeList)
         {
             <option value="@mediatheme" selected="@(mediatheme == SelectedMediaTheme)">
@@ -14,9 +14,10 @@
         }
     </select>
 
-    <!-- 직접 입력용 텍스트박스: 필요없으면 제거 -->
-    <!-- 텍스트박스 입력 시에도 SelectedMediaThemeChanged 호출 -->
-    <input class="form-control" type="text" placeholder="Or type a new mediatheme..."
+    <span class="mx-2 text-muted">or</span>
+
+    <!-- 직접 입력용 텍스트박스 -->
+    <input class="form-control" type="text" placeholder="Or type a new media theme..."
            @bind="SelectedMediaTheme"
            @oninput="OnInputChanged" />
 </div>
