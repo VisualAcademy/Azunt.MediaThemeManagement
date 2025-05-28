@@ -42,7 +42,7 @@
                     <thead class="thead-light">
                         <tr>
                             <th class="text-center text-nowrap" @onclick="SortByName" style="cursor: pointer;">
-                                Name <Azunt.Web.Components.Pages.MediaThemes.Components.SortOrderArrow SortColumn="Name" SortOrder="@sortOrder" />
+                                Name <Azunt.Components.Sorting.SortOrderArrow SortColumn="Name" SortOrder="@sortOrder"></Azunt.Components.Sorting.SortOrderArrow>
                             </th>
 
                             @if (!SimpleMode)
