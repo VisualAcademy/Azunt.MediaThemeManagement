@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using Azunt.Components.Dialogs;
+using Azunt.MediaThemeManagement;
+using Azunt.Web.Components.Pages.MediaThemes.Components;
+using Azunt.Web.Data;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.JSInterop;
-using Azunt.MediaThemeManagement;
-using Azunt.Web.Components.Pages.MediaThemes.Components;
-using Microsoft.Extensions.Configuration;
-using System.Collections.Generic;
-using System.Linq;
-using System;
-using System.Threading.Tasks;
-using Azunt.Web.Data;
 
 namespace Azunt.Web.Pages.MediaThemes;
 
