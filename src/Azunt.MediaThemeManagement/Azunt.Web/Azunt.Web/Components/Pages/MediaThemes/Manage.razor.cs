@@ -22,7 +22,7 @@ public partial class Manage : ComponentBase
     #endregion
 
     #region Injectors
-    [Inject] public NavigationManager NavigationManagerInjector { get; set; } = null!;
+    [Inject] public NavigationManager Nav { get; set; } = null!;
     [Inject] public IJSRuntime JSRuntimeInjector { get; set; } = null!;
     [Inject] public IMediaThemeRepository RepositoryReference { get; set; } = null!;
     [Inject] public IConfiguration Configuration { get; set; } = null!;
