@@ -10,6 +10,7 @@
     <ItemGroup>
         <ProjectReference Include="..\..\Azunt.MediaThemeManagement\Azunt.MediaThemeManagement.csproj" />
         <ProjectReference Include="..\Azunt.Web.Client\Azunt.Web.Client.csproj" />
+        <PackageReference Include="Azunt.Components" Version="1.0.2" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="9.0.5" />
         <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.5" />
         <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.5" />
